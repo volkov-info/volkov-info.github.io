@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Информатика и ИКТ / Обратная связь</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href="css/site.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Информатика и ИКТ</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="1.htm">Работа учителя</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="2.htm">Педагогам</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="3.htm">Учащимся</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="4.htm">Родителям</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="contact.html">Контакты</a> </li>
+</ul>
+    </div>
+  </div>
+</nav>
+<header class="masthead"> <div class="overlay"></div> <div class="container"> <div class="myhead">&nbsp;</div> </div> </header>
+<div class="container">
+  <!-- content -->
+
+  <div class="row">
+    <div class="col-lg-10 col-md-10 mx-auto">
+      <img src="pic/foto2.jpg" width="241" alt=""  class="img-fluid rounded float-right" />
+      <h6>Контактная информация</h6>
+
+      <p>
+        г. Нижний Новгород, ул, Пискунова, 35А <br/>
+        тел (рабочий): (831) 436-21-58 <br/>
+        e-mail: nik.a.volkov &commat; gmail.com
+
+      </p>
+
+      <p>
+        График работы в лицее: <small>пн-пт с 8.00 до 16.00</small> <br/>
+        Дни для консультаций и пересдач: <small>пн-ср, после 13.30</small> <br/>
+      </p>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-10 col-md-10 mx-auto">
+      <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+      <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet"/>
+
+      <div id="osm-map"></div>
+
+      <script type="text/javascript">
+        var element = document.getElementById('osm-map');
+        element.style = 'height:300px; margin-top: 10px; margin-bottom: 30px';
+        var map = L.map(element);
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        var target = L.latLng('56.3246', '44.0115');
+        map.setView(target, 16);
+        L.marker(target).addTo(map);
+    </script>
+
+    </div>
+  </div>
+
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("contactForm").submit();
+    }
+  </script>
+
+  <div class="row">
+      <div class="col-lg-10 col-md-10 mx-auto">
+        <h6>Обратная связь</h6>
+        <form name="sentMessage" id="contactForm" action="https://formspree.io/f/xvovbqqk" method="POST">
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Имя</label>
+              <input name="name" type="text" class="form-control" placeholder="Имя" id="name" required data-validation-required-message="Введите имя">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Email</label>
+              <input name="email" type="email" class="form-control" placeholder="Электронная почта" id="email" required data-validation-required-message="Введите email">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls" style="border-bottom: 0">
+              <label>Сообщение</label>
+              <textarea name="message" rows="5" class="form-control" style="border: 1px dotted gray; padding: 5px"
+                        placeholder="Сообщение" id="message" required data-validation-required-message="Напишите сообщение"></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+
+          <button class="btn btn-primary"
+                  data-sitekey="6Lc2GPEZAAAAAKHzL59Thd4r-wUUyEzdwC3JXdBQ"
+                  data-callback='onSubmit' data-action='submit'>Отправить</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- /content -->
+</div>
+<hr>
+<footer> <div class="container"> <div class="row"> <div class="col-lg-8 col-md-10 mx-auto">
+<p class="copyright"> <span class="text-muted">&copy; 2020</span> &dot; <a href="map.html">Карта сайта</a> &dot; <a href="contact.html">Обратная связь</a> </p>
+</div> </div> </div> </footer>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
+
