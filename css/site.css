@@ -69,6 +69,10 @@ div.training .card-header {
   margin-top: 10px !important;
   font-size: small !important;
 }
+#highlighted div.card-text a {
+  text-decoration: #0085A1;
+  text-decoration-line: underline;
+}
 
 div.holidays {
   margin-left: 30px;
